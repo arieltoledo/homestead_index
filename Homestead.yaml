@@ -1,0 +1,33 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 2
+provider: virtualbox
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+    - map: ~/Development
+      to: /home/vagrant/development
+
+sites:
+    - map: app.test
+      to: /home/vagrant/code/app
+    - map: app2.test
+      to: /home/vagrant/code/app2
+    - map: app3.test
+      to: /home/vagrant/code/app3
+
+databases:
+    - homestead
+#ports:
+#      - send: 8080 
+#	to: 8080
+#     - send: 50000
+#       to: 5000
+#     - send: 7777
+#       to: 777
+#       protocol: udp
